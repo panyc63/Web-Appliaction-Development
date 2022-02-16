@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewData["Title"] = "Home";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<style>
+    h1,p{
+      color:white;
+    }
+    img {
+        height: 300px;
+        width: 500px;
+        margin: 20px;
+    }
+</style>
+<center><h1>Home</h1></center>
+
+<body>
+    <center>
+        <div style="display:inline-block">
+            <a href="~/FlightSchedule/ViewFlightSchedule"><img src="~/images/FlightSchedule.jpg" caption="Flight Schedule" /> </a>
+            <p>Flight Schedule</p>
+        </div>
+        <div style="display:inline-block">
+            <a href="~/FlightSchedule/ViewFlightRoute"><img src="~/images/FlightRoute.jpg" caption="Flight Route" /> </a>
+            <p>Flight Route</p>
+        </div>
+    </center>
+</body>
+
+
+
+

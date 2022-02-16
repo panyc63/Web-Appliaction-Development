@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Assignment.Models.FlightRoute>
+
+
+@{
+    ViewData["Title"] = "ViewFlight";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+<style>
+    a{
+        margin:15px;
+    }
+</style>
+<h4 class="PageTitle">View Route</h4>
+<div class="options">
+    <a asp-action="CreateFlightRoute">Create New Route</a>
+    <a asp-action="Home">Back</a>
+</div>
+
+<partial name="~/Views/FlightSchedule/_ViewRoute.cshtml" model="@Model" />

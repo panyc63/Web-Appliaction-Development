@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Lion City Airlines</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Aladin" />
+</head>
+<body style="background-color:#203354;overflow:scroll">
+    <!-- A grey navbar that expands horizontally at medium device -->
+    <nav class="navbar navbar-expand-md bg-light navbar-light">
+        <!-- The brand(or icon) of the navbar -->
+        <img id="brandlogo" src="~/images/Brand.png" />
+        <a class="navbar-brand" href="~/Home/HomePage"
+           style="font-size:28px; font-family: Aladin">
+            Lion City Airlines
+        </a>
+        <!-- Toggle/collapsible Button, also known as hamburger button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#staffNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Links in the navbar, displayed as drop-down list when collapsed -->
+        <div class="collapse navbar-collapse" id="staffNavbar">
+            <!-- Links that are aligned to the left,
+            mr-auto: right margin auto-adjusted -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="~/Home/HomePage">
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="~/Home/Deals">Deals</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="~/Home/AboutUs">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <!-- A link for logging out user -->
+                    <a class="nav-link" href="~/Home/ContactUs">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <!-- A link for logging out user -->
+                    <a class="nav-link" href="~/Home/WorldTimeAPI">World Time API</a>
+                </li>
+            </ul>
+            <!-- Links that are aligned to the right,
+            ml-auto: left margin auto-adjusted -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <!-- A link for logging out user -->
+                    <a class="nav-link" href="~/Home/LogIn">Log In</a>
+                </li>
+                <li class="nav-item">
+                    <!-- A link for logging out user -->
+                    <a class="nav-link" href="~/Home/Register">Register</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <footer class="border-top footer text-muted" style="background-color:#ffffff">
+        <div class="container">
+            &copy; Copyright 2020 IT02 Grp 3. All rights reserved.<br /> 
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

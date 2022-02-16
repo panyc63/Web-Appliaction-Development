@@ -1,0 +1,221 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+    color: #0366d6;
+}
+
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+#brandlogo {
+    width: 50px;
+    height: 40px;
+    padding-right: 10px;
+}
+
+/*table format*/
+td{
+    background-color:white;
+}
+
+/*flight personnel styling*/
+.content {
+
+    background-color: #203354;
+    min-width: 100%;
+    overflow: hidden;
+    color: white;
+    padding-top: 10px;
+}
+
+.sidenav {
+    text-decoration: none;
+    list-style-type: none;
+    
+}
+
+li {
+    display: inline;
+}
+
+.card {
+    width: 80%;
+    background-color: white;
+    color: black;
+    padding: 20% 0;
+}
+
+
+.options {
+    padding: 10px 0;
+    text-align: center;
+}
+
+.col-sm-4 {
+
+}
+
+.row {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.dropbtn {
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {
+     background-color: #ddd;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+
+}
+
+.PageTitle{
+    text-align:center;
+    color:white;
+    margin-top:20px;
+}
+
+.forms {
+    background-color: #DFE2E6;
+    color: black;
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px 0;
+    border: 2px #DFE2E6;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.btn-primary{
+    margin:0 auto;
+}
+.label {
+    display:inline-block;
+
+}
+.input {
+    display:inline-block;
+}
+.tablerow {
+    display:block
+}
+
+/*banner style*/
+.banner{
+   width: 80%;
+   height:30%;
+   background-color:red;
+   color:white;
+   margin: 0 auto;
+   padding: 20px 0;
+}
+
+.bannerheader{
+    color:white;
+    font-family:Aladin;
+}
+
+.bannersubheader{
+    font-size:30px;
+    color:white;
+    font-family:Aladin;
+}

@@ -1,0 +1,70 @@
+﻿@model Assignment.Models.Aircraft
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4 class="PageTitle">Add Aircraft Record</h4>
+<hr />
+
+<form style="background-color:white"; asp-action="Create">
+
+    <fieldset class="FormContent">
+        <div class="form-group row">
+            <label asp-for="MakeModel"
+                   class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9 col-md-5">
+                <input asp-for="MakeModel" class="form-control" />
+                <span asp-validation-for="MakeModel"
+                      class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="Status"
+                   class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9 col-md-5">
+                <div class="form-group form-check-inline">
+                    <label class="col-form-label">
+                        <input asp-for="Status" type="radio" value="Operational"
+                               checked class="form-check-input" />
+                        <span>Operational</span>
+                    </label>
+                    <label class="col-form-label">
+                        <input asp-for="Status" type="radio" value="Under Maintenance"
+                               class="form-check-input" />
+                        <span>Under Maintenance</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="NumEconomySeat"
+                   class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9 col-md-5">
+                <input asp-for="NumEconomySeat" class="form-control" />
+                <span asp-validation-for="NumEconomySeat"
+                      class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="NumBusinessSeat"
+                   class="col-sm-3 col-form-label"></label>
+            <div class="col-sm-9 col-md-5">
+                <input asp-for="NumBusinessSeat" class="form-control" />
+                <span asp-validation-for="NumBusinessSeat"
+                      class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-9 offset-sm-3">
+                <input type="submit" value="Create"
+                       class="btn btn-primary" />
+            </div>
+        </div>
+
+        <div>
+            <a asp-action="ViewAircraft">Back to List</a>
+        </div>
+    </fieldset>
+</form>
+

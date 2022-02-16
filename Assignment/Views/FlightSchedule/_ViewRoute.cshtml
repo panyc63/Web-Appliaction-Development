@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Assignment.Models.FlightRoute>
+
+@if (Model.ToList().Count > 0)
+{
+    <div class="table-responsive">
+        <table id="viewSchedule" class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Route ID</th>
+                    <th>Departure City</th>
+                    <th>Departure Country</th>
+                    <th>Arrival City</th>
+                    <th>Arrival Country</th>
+                    <th>Flight Duration</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.RouteID</td>
+                        <td>@item.DepartureCity.ToString()</td>
+                        <td>@item.DepartureCountry</td>
+                        <td>@item.ArrivalCity</td>
+                        <td>@item.ArrivalCountry</td>
+                        <td>@item.FlightDuration</td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <span style="color:red">No record found!</span>
+}

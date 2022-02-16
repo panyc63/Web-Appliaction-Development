@@ -1,0 +1,120 @@
+﻿@model Assignment.Models.Overall
+
+@{
+    ViewData["Title"] = "Print";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h4 style="color:white">View Booking</h4>
+<fieldset class="FormContent" style="color:white">
+    <div class="form-group row">
+        <label asp-for="BookingID"
+               class="col-sm-3 col-form-label"></label>
+        <div class="col-sm-9 form-control-plaintext" style="color:white">
+            @Html.Display("BookingID")
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="CustomerID"
+               class="col-sm-3 col-form-label"></label>
+        <div class="col-sm-9 form-control-plaintext" style="color:white">
+            @Html.Display("CustomerID")
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="ScheduleID"
+               class="col-sm-3 col-form-label"></label>
+        <div class="col-sm-9 form-control-plaintext" style="color:white">
+            @Html.Display("ScheduleID")
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="PassengerName"
+               class="col-sm-3 col-form-label"></label>
+        <div class="col-sm-9 form-control-plaintext" style="color:white">
+            @Html.Display("PassengerName")
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="PassportNumber"
+               class="col-sm-3 col-form-label"></label>
+        <div class="col-sm-9 form-control-plaintext" style="color:white">
+            @Html.Display("PassportNumber")
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="Nationality"
+               class="col-sm-3 col-form-label"></label>
+        <div class="col-sm-9 form-control-plaintext" style="color:white">
+            @Html.Display("Nationality")
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="SeatClass"
+               class="col-sm-3 col-form-label"></label>
+        <div class="col-sm-9 form-control-plaintext" style="color:white">
+            @Html.Display("SeatClass")
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="Remarks"
+               class="col-sm-3 col-form-label"></label>
+        <div class="col-sm-9 form-control-plaintext" style="color:white">
+            @Html.Display("Remarks")
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="DateTimeCreated"
+               class="col-sm-3 col-form-label"></label>
+        <div class="col-sm-9 form-control-plaintext" style="color:white">
+            @Html.Display("DateTimeCreated")
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="DepartureDateTime"
+               class="col-sm-3 col-form-label"></label>
+        <div class="col-sm-9 form-control-plaintext" style="color:white">
+            @Html.Display("DepartureDateTime")
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="ArrivalDateTime"
+               class="col-sm-3 col-form-label"></label>
+        <div class="col-sm-9 form-control-plaintext" style="color:white">
+            @Html.Display("ArrivalDateTime")
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="DepartureCountry"
+               class="col-sm-3 col-form-label"></label>
+        <div class="col-sm-9 form-control-plaintext" style="color:white">
+            @Html.Display("DepartureCountry")
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="DepartureCity"
+               class="col-sm-3 col-form-label"></label>
+        <div class="col-sm-9 form-control-plaintext" style="color:white">
+            @Html.Display("DepartureCity")
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="ArrivalCountry"
+               class="col-sm-3 col-form-label"></label>
+        <div class="col-sm-9 form-control-plaintext" style="color:white">
+            @Html.Display("ArrivalCountry")
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="ArrivalCity"
+               class="col-sm-3 col-form-label"></label>
+        <div class="col-sm-9 form-control-plaintext" style="color:white">
+            @Html.Display("ArrivalCity")
+        </div>
+    </div>
+    <button onclick="window.print()">Print</button><br /><br />
+    <div>
+        <a style="color:white" asp-action="ViewBookedTicket">Back to View Other Booked Ticket</a>
+    </div>
+</fieldset>
+

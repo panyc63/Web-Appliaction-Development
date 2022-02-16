@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Assignment.Models.FlightSchedule>
+
+@{
+    ViewData["Title"] = "View Schedule";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+<style>
+    a{
+        margin:15px;
+    }
+</style>
+<h4 class="PageTitle">View Schedule</h4>
+<div class="options">
+    <a asp-action="CreateFlightSchedule">Create New Schedule</a>
+    <a asp-action="Home">Back</a>
+</div>
+<!-- Add a partial view to display a list of staff records
+ in a tabular format. -->
+<partial name="~/Views/FlightSchedule/_ViewSchedule.cshtml" model="@Model" />

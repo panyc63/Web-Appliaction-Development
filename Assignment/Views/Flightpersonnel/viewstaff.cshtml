@@ -1,0 +1,87 @@
+﻿@model IEnumerable<Assignment.Models.Staff>
+
+@{
+    ViewData["Title"] = "View Staff";
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Flight personnel assignment hompeage</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Aladin" />
+</head>
+
+<body style="background-color:#203354; min-height:100%;">
+    <!-- A grey navbar that expands horizontally at medium device -->
+    <nav class="navbar navbar-expand-md bg-light navbar-light">
+        <!-- The brand(or icon) of the navbar -->
+        <img id="brandlogo" src="~/images/Brand.png" />
+        <a class="navbar-brand" href="~/Home/HomePage"
+           style="font-size:32px; font-family: Aladin">
+            Lion City Airlines
+        </a>
+        <!-- Toggle/collapsible Button, also known as hamburger button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#staffNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Links in the navbar, displayed as drop-down list when collapsed -->
+        <div class="collapse navbar-collapse" id="staffNavbar">
+            <!-- Links that are aligned to the left,
+            mr-auto: right margin auto-adjusted -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="~/Home/HomePage">
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="~/Home/Deals">Deals</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="~/Home/AboutUs">About Us</a>
+                </li>
+            </ul>
+            <!-- Links that are aligned to the right,
+            ml-auto: left margin auto-adjusted -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <!-- A link for logging out user -->
+                    <a class="nav-link" href="~/Home/ContactUs">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <!-- A link for logging out user -->
+                    <a class="nav-link" href="~/Home/HomePage">Log Out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container content">
+        <!--bootstrap cards to navigate between pages-->
+        <div class="options">
+            <!--side nav to move between flight personnel pages-->
+            <ul class="sidenav">
+                <a asp-action="homepage"><li>Flight personnel homepage | </li></a>
+                <a href="~/Home/AdminHomePage"><li>Admin homepage</li></a>
+            </ul>
+            <!-- Add a partial view to display a list of staff records
+             in a tabular format. -->
+            <partial name="~/Views/Flightpersonnel/_ViewStaff.cshtml" model="@Model" />
+        </div>
+    </div>
+
+        <footer class="border-top footer text-muted" style="background-color:#ffffff">
+            <div class="container">
+                &copy; 2020 - WEB-2020-P02-T3 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+        </footer>
+</body>
+</html>

@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Assignment.Models.Booking>
+
+@{
+    ViewData["Title"] = "ViewBookedTicket";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h1 style="font-family: Aladin; font-size: 25px; color:white; background-color:#203354"><center>View Booked Ticket</center></h1>
+
+@if (Model.ToList().Count > 0)
+{
+    <div class="table-responsive">
+        <table id="viewSchedule" class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.BookingID)</th>
+                    <th>@Html.DisplayNameFor(model => model.ScheduleID)</th>
+                    <th>@Html.DisplayNameFor(model => model.PassengerName)</th>
+                    <th>@Html.DisplayNameFor(model => model.PassportNumber)</th>
+                    <th>@Html.DisplayNameFor(model => model.Nationality)</th>
+                    <th>@Html.DisplayNameFor(model => model.AmtPayable)</th>
+                    <th>@Html.DisplayNameFor(model => model.Remarks)</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.BookingID)</td>
+                        <td>@Html.DisplayFor(modelItem => item.ScheduleID)</td>
+                        <td>@Html.DisplayFor(modelItem => item.PassengerName)</td>
+                        <td>@Html.DisplayFor(modelItem => item.PassportNumber)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Nationality)</td>
+                        <td>@item.AmtPayable</td>
+                        <td>@Html.DisplayFor(modelItem => item.Remarks)</td>
+                        <td style="padding-right:20px">
+                            <a asp-action="ViewBooking" asp-controller="Customer"
+                               asp-route-id="@item.BookingID">View</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <span style="color:white">No record found!</span>
+}
+<br />
+<div>
+    <a style="color:white" asp-action="CustomerHomePage">Back to Customer Home Page</a>
+</div>
+

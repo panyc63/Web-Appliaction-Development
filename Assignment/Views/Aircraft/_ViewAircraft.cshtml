@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Assignment.Models.Aircraft>
+
+@if (Model.ToList().Count > 0)
+{
+    <div class="table-responsive">
+        <table id="viewAircraft" class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>MakeModel</th>
+                    <th>Number of Economy Seats</th>
+                    <th>Number of Buisness Seats</th>
+                    <th>Date of Last Maintainence</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.AircraftID.ToString()</td>
+                        <td>@item.MakeModel</td>
+                        
+                        <td>@item.NumEconomySeat</td>
+                        <td>
+                            @item.NumBusinessSeat
+                        </td>
+                        <td>@item.DateLastMaintenance</td>
+                        <td>@item.Status</td>
+                        <td>
+                            <a asp-action="Edit" asp-controller="Aircraft"
+                               asp-route-id="@item.AircraftID">Edit</a> 
+                            
+                           
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <span style="color:red">No record found!</span>
+}

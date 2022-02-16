@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewData["Title"] = "CustomerHomePage";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<div class="container">
+    <!-- 1st row -->
+    <div class="row">
+        <div class="col-sm-12">
+            <p style="padding:2px 15px;">
+                @{
+                    string userId = "";
+                    string userRole = "";
+                    string customername = "";
+                    if (Context.Session.GetString("LoginID") != null)
+                    {
+                        userId = Context.Session.GetString("LoginID");
+                    }
+                    if (Context.Session.GetString("Role") != null)
+                    {
+                        userRole = Context.Session.GetString("Role");
+                    }
+                    if (Context.Session.GetString("CustName") != null)
+                    {
+                        customername = Context.Session.GetString("CustName");
+                    }
+                }
+            </p>
+        </div>
+    </div>
+</div>
+<div class="container content">
+    <!--bootstrap cards to navigate between pages-->
+    <div class="options">
+        <!--side nav to move between flight personnel pages-->
+        <ul class="sidenav">
+            <li style="font-family: Aladin; font-size: 25px">
+                Welcome To Lion City Airlines,&nbsp;
+                <span style="font-weight:bold">@customername</span>&nbsp; 
+            </li>
+        </ul>
+        <h5 style="font-family: Aladin; font-size: 25px">What will you like to do today?</h5>
+        <div class="mini-line"></div>
+        <br />
+        <div class="row justify-content-center ">
+            <!--Personnel Scheduler-->
+            <div class="col-sm-4 panel" align="center">
+                <a asp-area="" asp-controller="Customer" asp-action="ChangePassword">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-text">Change your password</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!--Create personal record-->
+            <div class="col-sm-4 panel" align="center">
+                <a asp-area="" asp-controller="Customer" asp-action="BookTicket">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-text">Book A Ticket</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!--View personnel record-->
+            <div class="col-sm-4 panel" align="center">
+                <a asp-area="" asp-controller="Customer" asp-action="ViewBookedTicket">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-text">View Booked Tickets</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+

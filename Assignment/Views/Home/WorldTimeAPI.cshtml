@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Assignment.Models.WorldTimeAPI>
+
+
+@{
+    ViewData["Title"] = "World Time API";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    h1 {
+        color: white;
+        text-align: center;
+    }
+</style>
+<h1>World Time API</h1>
+
+@if (Model.ToList().Count > 0)
+{
+    <div class="table-responsive">
+        <table id="viewBook" class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.abbreviation)</th>
+                    <th>@Html.DisplayNameFor(model => model.client_ip)</th>
+                    <th>@Html.DisplayNameFor(model => model.datetime)</th>
+                    <th>@Html.DisplayNameFor(model => model.day_of_week)</th>
+                    <th>@Html.DisplayNameFor(model => model.day_of_year)</th>
+                    <th>@Html.DisplayNameFor(model => model.dst)</th>
+                    <th>@Html.DisplayNameFor(model => model.dst_from)</th>
+                    <th>@Html.DisplayNameFor(model => model.dst_until)</th>
+                    <th>@Html.DisplayNameFor(model => model.dst_offset)</th>
+                    <th>@Html.DisplayNameFor(model => model.raw_offset)</th>
+                    <th>@Html.DisplayNameFor(model => model.timezone)</th>
+                    <th>@Html.DisplayNameFor(model => model.unixtime)</th>
+                    <th>@Html.DisplayNameFor(model => model.utc_datetime)</th>
+                    <th>@Html.DisplayNameFor(model => model.utc_offset)</th>
+                    <th>@Html.DisplayNameFor(model => model.week_number)</th>
+
+
+</thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>@item.abbreviation</td>
+                    <td>@item.client_ip</td>
+                    <td>@item.datetime</td>
+                    <td>@item.day_of_week</td>
+                    <td>@item.day_of_year</td>
+                    <td>@item.dst</td>
+                    <td>@item.dst_from</td>
+                    <td>@item.dst_until</td>
+                    <td>@item.dst_offset</td>
+                    <td>@item.raw_offset</td>
+                    <td>@item.timezone</td>
+                    <td>@item.unixtime</td>
+                    <td>@item.utc_datetime</td>
+                    <td>@item.utc_offset</td>
+                    <td>@item.week_number</td>
+
+
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <span style="color:red">No record found!</span>
+}
+

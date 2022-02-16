@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Assignment.Models.FlightSchedule>
+
+@{
+    ViewData["Title"] = "ViewFlightSchedule";
+}
+
+@if (Model.ToList().Count > 0)
+{
+    <div class="table-responsive">
+        <table id="viewSchedule" class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Schedule ID</th>
+                    <th>Flight Number</th>
+                    <th>Route ID</th>
+                    <th>Aircraft ID</th>
+                    <th>Departure Date & Time</th>
+                    <th>Arrival Date & Time</th>
+                    <th>Economy Class Price</th>
+                    <th>Business Class Price</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.ScheduleID</td>
+                        <td>@item.FlightNumber.ToString()</td>
+                        <td>@item.RouteID</td>
+                        <td>@item.AircraftID</td>
+                        <td>@item.DepartureDateTime</td>
+                        <td>@item.ArrivalDateTime</td>
+                        <td>@item.EconomyClassPrice</td>
+                        <td>@item.BusinessClassPrice</td>
+                        <td>@item.Status</td>
+                        <td>
+                            <a asp-action="UpdateStatus" asp-controller="FlightSchedule"
+                               asp-route-id="@item.RouteID">Edit Status</a>
+
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <span style="color:red">No record found!</span>
+}

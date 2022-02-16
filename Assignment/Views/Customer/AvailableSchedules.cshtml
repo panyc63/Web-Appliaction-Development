@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Assignment.Models.CustomerFS>
+
+
+@{
+    ViewData["Title"] = "BookTicket";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+    <h1 style="font-family: Aladin; font-size: 25px; color:white; background-color:#203354"><center>View Available Flight Schedule</center></h1>
+
+@if (Model.ToList().Count > 0)
+{
+    <div class="table-responsive">
+        <table id="viewSchedule" class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.FlightNumber)</th>
+                    <th>@Html.DisplayNameFor(model => model.DepartureDateTime)</th>
+                    <th>@Html.DisplayNameFor(model => model.DepartureCountry)</th>
+                    <th>@Html.DisplayNameFor(model => model.DepartureCity)</th>
+                    <th>@Html.DisplayNameFor(model => model.ArrivalDateTime)</th>
+                    <th>@Html.DisplayNameFor(model => model.ArrivalCountry)</th>
+                    <th>@Html.DisplayNameFor(model => model.ArrivalCity)</th>
+                    <th>@Html.DisplayNameFor(model => model.EconomyClassPrice)</th>
+                    <th>@Html.DisplayNameFor(model => model.BusinessClassPrice)</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.FlightNumber)</td>
+                    <td>@Html.DisplayFor(modelItem => item.DepartureDateTime)</td>
+                    <td>@Html.DisplayFor(modelItem => item.DepartureCountry)</td>
+                    <td>@Html.DisplayFor(modelItem => item.DepartureCity)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ArrivalDateTime)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ArrivalCountry)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ArrivalCity)</td>
+                    <td>@Html.DisplayFor(modelItem => item.EconomyClassPrice)</td>
+                    <td>@Html.DisplayFor(modelItem => item.BusinessClassPrice)</td>
+                    <td style="padding-right:20px">
+                        <a asp-action="CreateBooking" asp-controller="Customer"
+                           asp-route-id="@item.ScheduleID">Book</a>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+<br />
+<div>
+    <a style="color:white" asp-action="BookTicket">Back to Search Other Available Schedules</a>
+</div>
+<br />
+<div>
+    <a style="color:white" asp-action="CustomerHomePage">Back to Customer Home Page</a>
+</div>

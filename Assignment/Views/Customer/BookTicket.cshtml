@@ -1,0 +1,48 @@
+﻿@model Assignment.Models.FlightRoute
+
+
+@{
+    ViewData["Title"] = "BookTicket";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h1 style="font-family: Aladin; font-size: 25px; color:white; background-color:#203354"><center>Book Ticket</center></h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="BookTicket">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group row">
+                <label asp-for="DepartureCountry"
+                       class="col-sm-6 col-form-label" style="color:white"></label>
+                <div class="col-sm-9 col-md-5">
+                    <select asp-for="DepartureCountry"
+                            asp-items="@ViewData["CountryList"]
+                                        as List<SelectListItem>"
+                            class="form-control" style="width: 300px;">
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label asp-for="ArrivalCountry"
+                       class="col-sm-6 col-form-label" style="color:white"></label>
+                <div class="col-sm-9 col-md-5">
+                    <select asp-for="ArrivalCountry"
+                            asp-items="@ViewData["CountryList"]
+                                        as List<SelectListItem>"
+                            class="form-control" style="width: 300px;">
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <span style="color:white">@TempData["Message"]</span><br />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Search" class="btn btn-primary" />
+            </div>
+            <div>
+                <a style="color:white" asp-action="CustomerHomePage">Back to Customer Home Page</a>
+            </div>
+        </form>
+    </div>
+</div>
